@@ -1,0 +1,19 @@
+{
+  "name": "discord-utils",
+  "version": "1.0.0",
+  "description": "A easy to use utils for discord.js bots",
+  "main": "index.js",
+  "repository": "typicalninja493/discord-utils",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "keywords": [
+    "Discord bot",
+    "discord bot utils",
+    "Discord.js",
+    "Discord"
+  ],
+  "author": "Typicalninja493",
+  "license": "ISC",
+  "dependencies": {}
+}
