@@ -4,6 +4,7 @@ const merge = require('deepmerge');
 const EventEmitter = require('events')
 const chalk = require('chalk');
 const version = require('./package.json').version
+const fetch = require('node-fetch')
 class UtilClient extends EventEmitter {
 
      /**
@@ -12,8 +13,13 @@ class UtilClient extends EventEmitter {
 constructor(client, options) {
     super();
     if (!client) throw new Error('Client is a required option.');
-
-    if(version !== newversion)
+const v = fetch('https://api.github.com/repos/typicalninja493/discord-utils/releases/latest').then(res => res.json());
+const nv = v.tag_name
+    if(version !== nv) {
+        console.log("\x1B[31mWARNING:\x1B[0m Discord util is out of date use 'npm i discord-util' to update");
+    const error = "Discord util is out of date"
+        this.emit('error', error)
+    }
 
     this.client = client;
 
@@ -26,6 +32,8 @@ constructor(client, options) {
     if(!this.v12 && this.warning) {
         console.log(chalk.red(["Warning"]),"Out dated discord.js version, only v12 is supported");
     }
+
+    this.emit('ready', this.options)
  
 }
     switchingstatus(statuses, options) {
@@ -83,6 +91,42 @@ constructor(client, options) {
             .awaitReactions(filter, { max: 1, time: time})
             .then(collected => collected.first() && collected.first().emoji.name);
        }
+       getmember(message, name) {
+        toFind = toFind.toLowerCase();
+
+        let target = this.v12 ? message.guild.members.cache.get(toFind) : message.guild.members.get(toFind);
+        
+        if (!target && message.mentions.members)
+            target = message.mentions.members.first();
+
+        if (!target && toFind) {
+            target = message.guild.members.find(member => {
+                return member.displayName.toLowerCase().includes(toFind) ||
+                member.user.tag.toLowerCase().includes(toFind)
+            });
+        }
+            
+        if (!target) 
+            target = message.member;
+            
+        return target;
+
+       }
+     error(message, error) {
+        const msg = message
+        let err = error
+
+    if(!err) err = 'Unknown error'
+
+
+    const errorEmbed = new Discord.MessageEmbed()
+	.setColor('RED')
+  .setDescription(` ❌ Following Error occured while completing the command\n\`\`\`${err}\`\`\``)
+
+  return errorEmbed
+
+
+     }
    }
 
 

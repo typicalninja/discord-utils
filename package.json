@@ -1,6 +1,6 @@
 {
-  "name": "discord-utils",
-  "version": "1.0.0",
+  "name": "discord-eutils",
+  "version": "1.0.1",
   "description": "A easy to use utils for discord.js bots",
   "main": "index.js",
   "repository": "typicalninja493/discord-utils",
@@ -15,5 +15,11 @@
   ],
   "author": "Typicalninja493",
   "license": "ISC",
-  "dependencies": {}
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "deepmerge": "^4.2.2",
+    "discord.js": "^12.5.1",
+    "events": "^3.2.0",
+    "node-fetch": "^2.6.1"
+  }
 }
