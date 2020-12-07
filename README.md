@@ -1,4 +1,4 @@
-# Discord utils
+# Discord eutils
 
 Discord utils is a package made to handle general things on your bot
 
@@ -34,20 +34,21 @@ client.once('ready', async () => {
   ]; // --> ex : set a switching status for your bot
 client.util.switchingstatus(activities, {
     time: 70000,// --> interval between changes
-    type: 'WATCHING' // --> Status time
+    type: 'WATCHING' // --> Status type
 })
 	console.log('Ready!');
 });
-client.util.on('ready', async () => {
-console.log('eutil ready')
-});
+
 
 ```
 
 # methods 
 
-```js
 
-coming soon
 
-```
+[sendFile()](https://github.com/typicalninja493/discord-utils/blob/master/examples/sendFile/sendFilehelp.md)
+
+[switchingstatus()](https://github.com/typicalninja493/discord-utils/blob/master/examples/switchingstatus/switchingstatus.md)
+
+
+
