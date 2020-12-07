@@ -28,9 +28,23 @@ if(message.content = helpfile) {
      }
   }) // --> example of sending a file in the message channel
  // output --> send a message with the file 
+// refer b1** for a image 
  })
 ```
 
+# sending a file to user/member in dms
+
+```js
+if(message.content = helpfile) {
+  client.util.sendFile(message.author, { // instead of messsage.channel we use messag.author
+      Location: `./helpfile.js`
+     }
+  }) // same code lines
+  
+  
+
+```
+b1**
 <a href="https://zupimages.net/viewer.php?id=20/50/939c.png"><img src="https://zupimages.net/up/20/50/939c.png" alt="" /></a>
 
 
