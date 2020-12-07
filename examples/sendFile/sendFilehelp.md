@@ -27,9 +27,10 @@ if(message.content = helpfile) {
       Location: `./helpfile.js`
      }
   }) // --> example of sending a file in the message channel
- // output --> send a message with the file __ b1*
+ // output --> send a message with the file 
  })
 
+<a href="https://zupimages.net/viewer.php?id=20/50/939c.png"><img src="https://zupimages.net/up/20/50/939c.png" alt="" /></a>
 
 
 
@@ -38,5 +39,4 @@ if(message.content = helpfile) {
 
 
 
-b1* 
-https://i.imgur.com/FPkfsiU.png
+
