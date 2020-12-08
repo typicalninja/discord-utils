@@ -2,6 +2,8 @@
 
 Discord utils is a package made to handle general things on your bot
 
+# you can find our support server [here](https://discord.com/invite/avQMktm)
+
 # Installing
 
 ```js
